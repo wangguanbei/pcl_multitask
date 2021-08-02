@@ -1,0 +1,10 @@
+<launch>
+    <param name="input_topic" value="/velodyne_points" />
+    <param name="resolution" value="0.05" />
+    <param name="width" value="400" />
+    <param name="height" value="400" />
+    <param name="lidar_z" value="0.18" />
+    <node pkg="pcl_multitask" type="genNavMap_node" name="genNavMap_node" output="screen" />
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcl_multitask)/rviz/genNavMap.rviz" />
+</launch>

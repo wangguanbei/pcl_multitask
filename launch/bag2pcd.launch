@@ -1,0 +1,16 @@
+<launch>
+    <param name="input_topic" value="/lslidar_point_cloud" />
+    <param name="YawDiff" value="1.57" />
+    <param name="zLow" value="0.0" />
+    <param name="zHigh" value="1.5" />
+    <param name="downsizeFlag" value="true" />
+    <param name="downsize" value="0.3" />
+    <param name="regis_type" value="icp" />
+    <param name="step_size" value="0.04" />
+    <param name="reso" value="0.08" />
+    <param name="max_iter" value="30" />
+    <param name="translation_epsilon" value="0.01" />
+    <node pkg="pcl_multitask" type="bag2pcd_node" name="bag2pcd_node" output="screen" />
+    <!--- Run Rviz-->
+    <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcl_multitask)/rviz/bag2pcd.rviz" /> -->
+</launch>

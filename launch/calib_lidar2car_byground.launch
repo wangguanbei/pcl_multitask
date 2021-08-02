@@ -1,0 +1,5 @@
+<launch>
+    <!-- <param name="input_path" value="/media/ubuwgb/Samsung_T5_WGB/prescan_bag/U0_loam/ground.pcd" /> -->
+    <param name="input_path" value="/home/ubuwgb/github/lidar-imu-calibration/data/20210318_calib_ground/undistort.pcd" />
+    <node pkg="pcl_multitask" type="calib_lidar2car_byground_node" name="calib_lidar2car_byground_node" output="screen" />
+</launch>

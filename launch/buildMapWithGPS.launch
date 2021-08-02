@@ -1,0 +1,19 @@
+<launch>
+    <param name="pc_input_topic" value="/velodyne_points" />
+    <param name="gps_topic" value="/gnss_bestpose" />
+    <param name="heading_topic" value="/gnss_heading" />
+    <param name="outpcd_path" value="/home/ubuwgb/catkin_ws/" />
+    <param name="lidarIngps_lon" value="0.48" />
+    <param name="lidarIngps_lat" value="0.0" />
+    <param name="lidarIngps_yaw_clockwise" value="3.4" />
+  
+    <!-- Bag file path -->  
+    <arg name="bag_file" value=
+    "/media/ubuwgb/Samsung_T5_WGB/apollo_rosbag/20210517_yuanqu_loop/0517loop_1/lidar_shiyanqu.bag"/>
+    <!-- rosbag player node -->
+    <!-- <node name="player" pkg="rosbag" type="play" output="screen" args=" -r 1 -s 0 $(arg bag_file)"/> -->
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcl_multitask)/rviz/buildMapWithGPS.rviz" />
+    <node pkg="pcl_multitask" type="buildMapWithGPS_node" name="buildMapWithGPS_node" output="screen" />
+</launch>

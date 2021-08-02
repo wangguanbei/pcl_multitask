@@ -1,0 +1,5 @@
+<launch>
+    <param name="input_topic" value="/lslidar_point_cloud" />
+    <param name="outpcd_path" value="/home/ubuwgb/catkin_ws/" />
+    <node pkg="pcl_multitask" type="bag2pcd_leishen_node" name="bag2pcd_leishen_node" output="screen" />
+</launch>

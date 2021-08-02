@@ -1,0 +1,15 @@
+<launch>
+    <param name="pc_input_topic" value="/velodyne_points" />
+    <param name="imagePath" value="/media/ubuwgb/Samsung_T5_WGB/bigcar_data/20210525_bigcar_xiqu/" />
+    <param name="imageNum" value="11822" />
+  
+    <!-- Bag file path -->  
+    <arg name="bag_file" value=
+    "/media/ubuwgb/Samsung_T5_WGB/apollo_rosbag/20210517_yuanqu_loop/0517loop_1/lidar_shiyanqu.bag"/>
+    <!-- rosbag player node -->
+    <!-- <node name="player" pkg="rosbag" type="play" output="screen" args=" -r 1 -s 0 $(arg bag_file)"/> -->
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" type="rviz" name="rviz" args="-d $(find pcl_multitask)/rviz/genBagImagePointcloud.rviz" />
+    <node pkg="pcl_multitask" type="genBagImagePointcloud_node" name="genBagImagePointcloud_node" output="screen" />
+</launch>
